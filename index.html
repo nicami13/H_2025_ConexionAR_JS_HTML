@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos de Sensores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .sensor-section {
+            background-color: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .sensor-section h2 {
+            margin-top: 0;
+        }
+        .sensor-section p {
+            font-size: 18px;
+        }
+        .logout-button {
+            display: block;
+            width: 200px;
+            padding: 10px;
+            margin: 20px auto;
+            background-color: #d9534f;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .logout-button:hover {
+            background-color: #c9302c;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Datos de Sensores</h1>
+</header>
+
+<div class="sensor-section">
+    <h2>Sensor de Temperatura</h2>
+    <p id="temp">Cargando dato...</p>
+</div>
+
+<div class="sensor-section">
+    <h2>Sensor de Humedad</h2>
+    <p id="humidity">Cargando dato...</p>
+</div>
+
+<div class="sensor-section">
+    <h2>Sensor de Proximidad</h2>
+    <p id="proximity">Cargando dato...</p>
+</div>
+
+<div class="sensor-section">
+    <h2>Sensor de Luz</h2>
+    <p id="light">Cargando dato...</p>
+</div>
+
+<!-- Botón de Cerrar Sesión -->
+<button class="logout-button" onclick="cerrarSesion()">Cerrar Sesión</button>
+
+<script>
+    // Datos de ejemplo de los sensores
+    const sensorData = {
+        temperature: "",
+        humidity: "",
+        proximity: "",
+        light: ""
+    };
+
+    // Actualizando los datos en las secciones correspondientes
+    document.getElementById("temp").innerText = "Temperatura: " + sensorData.temperature;
+    document.getElementById("humidity").innerText = "Humedad: " + sensorData.humidity;
+    document.getElementById("proximity").innerText = "Proximidad: " + sensorData.proximity;
+    document.getElementById("light").innerText = "Luz: " + sensorData.light;
+
+    // Función para cerrar sesión
+    function cerrarSesion() {
+        // Redirigir a la página de login (credenciales)
+        window.location.href = "credential.html";  // Asume que la página de login es login.html
+    }
+</script>
+
+</body>
+</html>
